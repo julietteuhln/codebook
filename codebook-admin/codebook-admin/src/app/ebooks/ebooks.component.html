@@ -1,0 +1,31 @@
+<section class="container">
+    <div class="overflow-x-auto py-6 mx-auto">
+        <table class="table table-auto w-full border-collapse">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Nom</th>
+                    <th>Prix</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products">
+                    <td>
+                        <div class="flex items-center justify-center">
+                            <img src="{{ product.poster }}" alt="{{ product.name }}"
+                                class="h-24 w-24 object-cover rounded-lg" />
+                        </div>
+                    </td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.price }} €</td>
+                    <td>
+                        <button type="button" (click)="selectedProduct(product)"
+                            class="btn btn-ghost btn-xs">Voir</button>
+                        <a class="btn btn-ghost btn-xs">Éditer</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
